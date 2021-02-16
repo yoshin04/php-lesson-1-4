@@ -21,24 +21,24 @@
       $items = ["グー", "チョキ", "パー"];
       $win = 'あなたの勝利です！';
       $lose = 'あなたの敗北です。。。';
-      $key = array_rand($items);
+      $pc = array_rand($items);
       $user = (int)$value;
-      echo "相手: " . $items[$key] . "<br>";
-      if($key === $user) {
-        echo "あいこ";
-      } else if ($key === 0 && $user === 1) {
-        echo $lose;
-      } else if($key === 0 && $user === 2) {
-        echo $win;
-      } else if($key === 1 && $user === 0 ) {
-        echo $win;
-      } else if ($key === 1 && $user === 2) {
-        echo $lose;
-      } else if ($key === 2 && $user === 0) {
-        echo $lose;
-      } else if ($key === 2 && $user === 1) {
-        echo $win;
+      echo "相手: " . $items[$pc] . "<br>";
+      switch ($user) {
+        case($key === $use):
+          $judgment = 'あいこ';
+          break;
+        case 0:
+          $judgment = ($pc === 2) ? $lose : $win;
+          break;
+        case 1:
+          $judgment = ($pc === 0) ? $lose : $win;
+          break;
+        case 2:
+        $judgment = ($pc === 1) ? $lose : $win;
+        break;
       }
+      echo $judgment;
     }
   ?>
 </body>
